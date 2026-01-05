@@ -1,28 +1,158 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HairbyEve | Beauty & Style</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<body>
 
+<!-- DARK MODE TOGGLE -->
+<button id="darkToggle" class="dark-toggle">🌙</button>
+
+<!-- HEADER -->
+<header class="header" data-aos="fade-down">
+  <h1>HairbyEve</h1>
+  <p>Beauty • Style • Confidence</p>
+</header>
+
+<main class="container">
+
+  <!-- ABOUT -->
+  <section class="about" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>
+      HairbyEve is a modern beauty salon offering premium hair, beauty, and grooming
+      services. We focus on quality, comfort, and confidence for every client.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <h2 data-aos="fade-right">Our Services</h2>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">✂️<h3>Haircut & Styling</h3></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">💇🏽‍♀️<h3>Braiding</h3></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">💅<h3>Manicure & Pedicure</h3></div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">💄<h3>Makeup</h3></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" data-aos="fade-up">
+    <h2>Pricing</h2>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Haircut</h3>
+        <p>KES 500</p>
+      </div>
+      <div class="service-card">
+        <h3>Braiding</h3>
+        <p>From KES 1,500</p>
+      </div>
+      <div class="service-card">
+        <h3>Makeup</h3>
+        <p>KES 2,000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" data-aos="fade-up">
+    <h2>Gallery</h2>
+
+    <div class="services-grid">
+      <div class="service-card">📸</div>
+      <div class="service-card">📸</div>
+      <div class="service-card">📸</div>
+      <div class="service-card">📸</div>
+    </div>
+    <p style="text-align:center;margin-top:15px;">(Replace with real photos later)</p>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" data-aos="fade-up">
+    <h2>Book Appointment</h2>
+
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <select required>
+        <option value="">Select Service</option>
+        <option>Haircut</option>
+        <option>Braiding</option>
+        <option>Makeup</option>
+        <option>Manicure & Pedicure</option>
+      </select>
+      <input type="date" required>
+      <button type="submit" class="btn">Book Now</button>
+    </form>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea placeholder="Message" rows="4" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- MAP -->
+  <section class="map" data-aos="fade-up">
+    <h2>Find Us</h2>
+    <iframe
+      src="https://www.google.com/maps?q=Nairobi&output=embed"
+      width="100%"
+      height="300"
+      style="border:0;border-radius:12px;"
+      loading="lazy">
+    </iframe>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 HairbyEve. All rights reserved.</p>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/254700000000" class="whatsapp-float" target="_blank">
+  💬
+</a>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 900,
-    easing: 'ease-in-out',
     once: true,
     offset: 120
   });
 </script>
+
+<!-- DARK MODE SCRIPT -->
 <script>
   const toggle = document.getElementById('darkToggle');
   const body = document.body;
 
-  // Load saved theme
   if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark');
     toggle.textContent = '☀️';
@@ -30,84 +160,10 @@
 
   toggle.addEventListener('click', () => {
     body.classList.toggle('dark');
-
-    if (body.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-      toggle.textContent = '☀️';
-    } else {
-      localStorage.setItem('theme', 'light');
-      toggle.textContent = '🌙';
-    }
+    toggle.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+    localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
   });
 </script>
 
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <h1>HairbyEve</h1>
-    <p>Beauty • Style • Confidence</p>
-  </header>
-<header class="header" data-aos="fade-down">
-<button id="darkToggle" class="dark-toggle">🌙</button>
-
-  <!-- MAIN CONTENT -->
-  <main class="container">
-
-    <!-- ABOUT -->
-    <section class="about">
-      <h2>About Us</h2>
-      <p>
-        HairbyEve is a professional beauty salon dedicated to helping you look
-        and feel your best. We offer quality hair, beauty, and grooming services
-        in a clean, friendly, and relaxing environment.
-      </p>
-    </section>
-<section class="about" data-aos="fade-up">
-
-    <!-- SERVICES -->
-    <section class="services">
-      <h2>Our Services</h2>
-<h2 data-aos="fade-right">Our Services</h2>
-
-      <div class="services-grid">
-        <div class="service-card">
-          ✂️
-          <h3>Haircut & Styling</h3>
-        </div>
-
-        <div class="service-card">
-          💇🏽‍♀️
-          <h3>Hair Braiding</h3>
-        </div>
-<div class="service-card" data-aos="zoom-in">
-
-        <div class="service-card">
-          💅
-          <h3>Manicure & Pedicure</h3>
-        </div>
-  <div class="service-card" data-aos="fade-up">
-
-        <div class="service-card">
-          💄
-          <h3>Makeup</h3>
-        </div>
-      </div>
-    </section>
-<section class="cta" data-aos="fade-up">
-
-    <!-- CTA -->
-    <section class="cta">
-      <a href="#" class="btn">Book Appointment</a>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 HairbyEve. All rights reserved.</p>
-  </footer>
-
 </body>
 </html>
-
