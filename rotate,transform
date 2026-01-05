@@ -1,5 +1,7 @@
 
-/* RESET */
+/* =========================
+   RESET & GLOBAL FIXES
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,18 +14,23 @@ html, body {
   background-color: #faf8f6;
   color: #2c2c2c;
   overflow-x: hidden;
+  writing-mode: horizontal-tb;
 }
 
-/* COLOR VARIABLES */
+/* =========================
+   COLOR VARIABLES
+========================= */
 :root {
-  --primary: #b07a5b;      /* luxury nude */
-  --secondary: #1c1c1c;    /* deep black */
-  --accent: #e7c6b1;       /* soft peach */
+  --primary: #b07a5b;
+  --secondary: #1c1c1c;
+  --accent: #e7c6b1;
   --light: #ffffff;
   --muted: #777;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
   background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
   color: var(--light);
@@ -43,14 +50,18 @@ html, body {
   margin-top: 10px;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 50px 20px;
 }
 
-/* HEADINGS */
+/* =========================
+   HEADINGS
+========================= */
 h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -58,14 +69,18 @@ h2 {
   color: var(--secondary);
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 .about p {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--muted);
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -78,8 +93,9 @@ h2 {
   padding: 35px 25px;
   border-radius: 16px;
   text-align: center;
+  font-size: 2rem;
   box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .service-card h3 {
@@ -94,7 +110,14 @@ h2 {
   box-shadow: 0 30px 60px rgba(0,0,0,0.12);
 }
 
-/* CTA BUTTON */
+/* =========================
+   CTA BUTTON
+========================= */
+.cta {
+  text-align: center;
+  margin: 60px 0;
+}
+
 .btn {
   background: var(--primary);
   color: var(--light);
@@ -103,14 +126,16 @@ h2 {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
   background: #9b6549;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 .footer {
   background: var(--secondary);
   color: #ccc;
@@ -119,17 +144,9 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .header h1 {
-    font-size: 2.3rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-}
-/* DARK MODE TOGGLE BUTTON */
+/* =========================
+   DARK MODE TOGGLE BUTTON
+========================= */
 .dark-toggle {
   position: fixed;
   top: 20px;
@@ -150,7 +167,10 @@ h2 {
 .dark-toggle:hover {
   background: #333;
 }
-/* DARK MODE */
+
+/* =========================
+   DARK MODE
+========================= */
 body.dark {
   background-color: #0f0f0f;
   color: #e5e5e5;
@@ -180,8 +200,20 @@ body.dark .footer {
 }
 
 body.dark .btn {
-  background: #b07a5b;
-  color: #fff;
+  background: var(--primary);
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
 }
 
 
